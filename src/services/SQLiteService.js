@@ -2,10 +2,7 @@ import { CapacitorSQLite, SQLiteConnection } from "@capacitor-community/sqlite";
 
 export default {
 	async notes (route){
-		console.log ('notes attempting to find source')
 		var source = await this.getDataSource()
-
-		console.log ('notes found source')
 		var data = []
 		if (source == 'database'){
 			data =  await this.notesFromDatabase(route)
@@ -21,16 +18,13 @@ export default {
 		}
 		console.log ('notes displayed')
 	},
-
 	async addNote(noteid, route, noteText){
-		var source = localStorage.getItem('mc2NoteSource');
+		var source = localStorage.getItem('mc2NoteSourceFra');
 		if (source == 'database'){
 			return await this.addNoteToDatabase(noteid, route, noteText)
 		}
 		return this.addNoteToLocalStorage(noteid, route, noteText)
 	},
-
-
 	notesFromLocalStorage(route){
 		var notes = JSON.parse(localStorage.getItem('Notes-'+ route));
 		if (notes == null){
@@ -38,7 +32,6 @@ export default {
 		}
 		return notes;
 	},
-
     addNoteToLocalStorage (noteid, route, noteText ){
        var height= this.calcNoteHeight(noteText)
 		// resize note
@@ -67,12 +60,13 @@ export default {
 				let db =  await this.openDatabase()
 				let query = 'SELECT * FROM notes WHERE page=?'
 				var res = await db.query(query,  [route])
-				await sqlite.closeConnection("db_mc2notes");
+				await sqlite.closeConnection("db_notes_fra");
 				return res.values
 			} catch (err) {
-				alert (' error in SQLite Service Notes')
+				console.log (' error in SQLite Service notes from database for ' + route)
 				console.log(`Error: ${err}`);
-				throw new Error(`Error: ${err}`);
+				localStorage.removeItem('mc2NoteSourceFra')
+				return this.notesFromLocalStorage(route)
 			}
 	},
 	async addNoteToDatabase(noteid, route, noteText){
@@ -97,22 +91,23 @@ export default {
 
 		} catch (err) {
 			console.log(`Error: ${err}`);
-			throw new Error(`Error: ${err}`);
+			addNoteToLocalStorage (noteid, route, noteText )
+			localStorage.removeItem('mc2NoteSourceFra')
 		}
 	},
 	async openDatabase(){
 		try {
 			const sqlite = new SQLiteConnection(CapacitorSQLite);
 			const ret = await sqlite.checkConnectionsConsistency();
-			const isConn = (await sqlite.isConnection("db_mc2notes")).result;
+			const isConn = (await sqlite.isConnection("db_notes_fra")).result;
 			//console.log(`after isConnection ${isConn}`);
 			let db;
 			if (ret.result && isConn) {
 				//console.log("I am retreiving connection")
-				db = await sqlite.retrieveConnection("db_mc2notes");
+				db = await sqlite.retrieveConnection("db_notes_fra");
 			} else {
 				//console.log("I am creating  connection")
-				db = await sqlite.createConnection("db_mc2notes", false, "no-encryption", 1);
+				db = await sqlite.createConnection("db_notes_fra", false, "no-encryption", 1);
 			}
 			await db.open();
 			return db
@@ -143,8 +138,7 @@ export default {
 	return newHeight
 	},
 	async getDataSource(){
-
-		var noteSource = localStorage.getItem('mc2NoteSource')
+		var noteSource = localStorage.getItem('mc2NoteSourceFra')
 		if (!noteSource){
 			noteSource= await this.createDataStore()
 		}
@@ -155,12 +149,12 @@ export default {
 		console.log ('createDataStore attempting to create database')
 		try {
 			const ret = await sqlite.checkConnectionsConsistency();
-			const isConn = (await sqlite.isConnection("db_mc2notes")).result;
+			const isConn = (await sqlite.isConnection("db_notes_fra")).result;
 			let db;
 			if (ret.result && isConn) {
-				db = await sqlite.retrieveConnection("db_mc2notes");
+				db = await sqlite.retrieveConnection("db_notes_fra");
 			} else {
-				db = await sqlite.createConnection("db_mc2notes", false, "no-encryption", 1);
+				db = await sqlite.createConnection("db_notes_fra", false, "no-encryption", 1);
 			}
 			await db.open();
 			const query = `
@@ -173,14 +167,14 @@ export default {
 			const res = await db.execute(query);
 			if (res.changes && res.changes.changes && res.changes.changes < 0) {
 				console.log ('createDataStore says database was NOT created')
-				localStorage.setItem('mc2NoteSource', 'localstorage')
+				localStorage.setItem('mc2NoteSourceFra', 'localstorage')
 				return;
 			}
-			await sqlite.closeConnection("db_mc2notes");
-			localStorage.setItem('mc2NoteSource', 'database')
+			await sqlite.closeConnection("db_notes_fra");
+			localStorage.setItem('mc2NoteSourceFra', 'database')
 		} catch (err) {
-			localStorage.setItem('mc2NoteSource', 'localstorage')
+			localStorage.setItem('mc2NoteSourceFra', 'localstorage')
 		}
-		return localStorage.getItem('mc2NoteSource')
+		return localStorage.getItem('mc2NoteSourceFra')
 	}
 }
