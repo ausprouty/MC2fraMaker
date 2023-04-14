@@ -1,0 +1,45 @@
+Does the App have the right name and logo when installed?
+
+Does the App open
+
+Visit Seeking Jesus ->
+
+Does the index to a series ask youto Allow the app to access photos, media and files
+
+Open Hope3
+  Does Context Expand?
+  Does the Bible verse Expand? Are readmore links removed?
+  Can you watch the video?
+  Enter a note.  Does the text box grow automatically when you type?
+
+Exit Hope 3; Re-enter.  Is the note still there?
+
+Can you return to main menu?
+
+  if not past the following into seek.vue:
+<div id="nav">
+    <div class="nav full internal-link" @click="this.vuePush('eng-index')">
+        <img src="@/assets/sites/mc2/images/ribbons/back-ribbon-mc2.png" class="nav full" />
+    </div>
+</div>
+Visit Multiply 1 Lesson 1
+Does link go to Transferable Concept 1 and return?
+
+Visit Multiply 1 Lesson 4
+   In the motivation section are their verses underlined that reveal the text when pressed?
+   Preparing for Mission:  how does the quote mark look?
+
+Visit Multiply 2 Period 1 Preparation
+   Can you Zoom image?
+   What does the Zoom message say?
+
+Transferable Concept
+  Can you hear the audio?
+
+Index at bottom:
+   Does it go to the correct App Store?
+   Share via email.  Does the subject and text look appropriate?
+   What happens when you change language?
+   Does link to churchmovments.com?
+
+Chinese: check that external links have been removed

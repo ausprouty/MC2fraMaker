@@ -1,0 +1,6 @@
+{
+  "appId": "app.mc2.fra",
+  "appName": "MC2-Francaise SD",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

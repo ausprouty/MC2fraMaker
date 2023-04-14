@@ -1,0 +1,178 @@
+copied  package.json
+{
+  "name": "com.mc2.spa",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@awesome-cordova-plugins/core": "^6.2.0",
+    "@awesome-cordova-plugins/diagnostic": "^6.2.0",
+    "@capacitor/android": "4.6.1",
+    "@capacitor/app": "4.1.1",
+    "@capacitor/core": "4.6.1",
+    "@capacitor/filesystem": "^4.1.4",
+    "@capacitor/haptics": "4.1.0",
+    "@capacitor/keyboard": "4.1.0",
+    "@capacitor/share": "^4.1.0",
+    "@capacitor/status-bar": "4.1.1",
+    "cordova.plugins.diagnostic": "^7.1.1",
+    "jvm": "^0.5.3",
+    "vue": "^3.2.45",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@capacitor-community/sqlite": "^4.5.0",
+    "@capacitor/cli": "4.6.1",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "prettier": "^2.7.1",
+    "vue-sqlite-hook": "^3.0.3"
+  },
+  "browserslist": [
+    "and_chr >= 60",
+    "chrome >= 60"
+  ]
+}
+
+npm update
+npx cap init
+  Enter name:    MC2-Francaise SD
+  Package id:  app.mc2.fra
+npx cap add android
+
+// make sure you are running JAVA 11
+// see https://www.happycoders.eu/java/how-to-switch-multiple-java-versions-windows/
+
+// copy from mc2.capacitor/fra
+
+// modify router/index.js for this language
+
+// Modify any sublibraries (like "Seek" to point back to main library)
+
+  <div id="nav">
+    <div class="nav full internal-link" @click="this.vuePush('eng-index')">
+        <img src="@/assets/sites/mc2/images/ribbons/back-ribbon-mc2.png" class="nav full" />
+    </div>
+</div>
+
+Edit src/assets/javascript/share.js
+
+  shareLesson(lesson, url)
+    title: 'Aquí está el enlace a MC2',
+    text: lesson,
+    url: site_url,
+    dialogTitle: 'Comparte esta página web',
+
+
+Edit src/components/VueImageZoomer.vue
+         hoverMessage: {
+            type: String,
+            default: '<span class="vh--icon">&#9906;</span> Passez la souris pour agrandir'
+        },
+        touchMessage: {
+            type: String,
+            default: '<span class="vh--icon">&#9906;</span> Toucher pour agrandir'
+        },
+        clickMessage: {
+            type: String,
+            default: '<span class="vh--icon">&#9906;</span> Cliquez pour agrandir'
+        },
+
+npm run build  -- this will reveal any image files that are missing
+npx cap sync
+npx cap open android
+
+// you may get this error:
+//  Multiple Gradle daemons might be spawned because the Gradle JDK and JAVA_HOME locations are different.
+//  Project 'android' is using the following JDK location when running Gradle: 'C:/Program Files/Java/jdk-19'
+//  The system environment variable JAVA_HOME is: 'C:\Program Files\Java\jdk-11.0.17'
+//  If you dont need to use different paths (or if JAVA_HOME is undefined), you can avoid spawning multiple daemons
+//  by setting JAVA_HOME and the JDK location to the same path.
+//https://www.youtube.com/watch?v=dIxmhrphJJY
+
+
+
+File->Project Structures  Android Gradle Plugin Version: 7.4.1  Gradle Version 7.5
+File->Project Structures ->Modules->Source Compatability VERSION_11
+File->Project Structures ->Modules->Target Compatability VERSION_11
+
+
+In Gradle Scripts
+
+check to see that variables.gradle (Project:Android) is
+
+ext {
+    minSdkVersion = 23  // i show22
+    compileSdkVersion = 33
+    targetSdkVersion = 28 // is show33
+    androidxActivityVersion = '1.4.0'
+    androidxAppCompatVersion = '1.4.2'
+    androidxCoordinatorLayoutVersion = '1.2.0'
+    androidxCoreVersion = '1.8.0'
+    androidxFragmentVersion = '1.4.1'
+    coreSplashScreenVersion = '1.0.0-rc01'
+    androidxWebkitVersion = '1.4.0'
+    junitVersion = '4.13.2'
+    androidxJunitVersion = '1.1.3'
+    androidxEspressoCoreVersion = '3.4.0'
+    cordovaAndroidVersion = '10.1.1'
+}
+build.gradle (Module:app)
+    buildToolsVersion '32.0.0'
+    compileSdk rootProject.ext.compileSdkVersion
+
+capacitor.build.gradle:
+
+android {
+  compileOptions {
+      sourceCompatibility JavaVersion.VERSION_11
+      targetCompatibility JavaVersion.VERSION_11
+  }
+}
+
+// now modify app/manifests/AndroidManifest.xml
+//in application area:
+ android:requestLegacyExternalStorage="true"
+ // in permissions
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+BAck in modify app/src/main/res/values/strings.xml
+
+      <?xml version='1.0' encoding='utf-8'?>
+      <resources>
+          <string name="app_name">MC2-Française SD </string>
+          <string name="title_activity_main">MC2-Française  SD </string>
+          <string name="package_name">com.mc2.fra</string>
+          <string name="custom_url_scheme">com.mc2.fra</string>
+      </resources>
+
+npm run build  -- this will reveal any image files that are missing
+npx cap sync
+npx cap open android
+
+DEV:
+
+npm run build
+npx cap sync
+npx cap open android
+ionic cap run android  -l --external
+   wait to select emulator
+   you will see starting development server
+
+
+PRODUCTION:
+npm run build
+npx cap sync
+npx cap open android
+Build -> Build APK
