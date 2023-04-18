@@ -14,11 +14,13 @@
 #offline-ready {
   color: var(--color-up-mc2);
 }
+
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
   margin: 0;
   width: 95%;
@@ -36,10 +38,12 @@ div.login-note {
 .bible-link {
   color: var(--color-bible-link-mc2);
 }
+
 .dbs-instruction {
   color: var(--color-blue-mc2);
   font-style: italic;
 }
+
 .badge {
   display: inline-flex;
   height: 26px;
@@ -52,18 +56,22 @@ div.login-note {
   font-weight: 400;
   line-height: 26px;
 }
+
 .badge.-fill-gradient {
   background: linear-gradient(to right, #16c0b0, #84cf6a);
   color: #fff;
 }
+
 .cache-series {
   background-color: var(--color-up-mc2);
 }
+
 .for-enrichment {
   background-color: #e6ecf2;
   padding: 10px;
   line-height: 2em;
 }
+
 .preview {
   background-color: white;
 }
@@ -79,31 +87,37 @@ h6 {
   align-items: center;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
+
 h1 {
   font-size: 30px;
   font-weight: 700;
   color: var(--color-blue-mc2);
   display: inline;
 }
+
 h2 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 0px;
   color: black;
 }
+
 h3 {
   font-size: 16px;
   font-weight: 700;
   color: var(--color-blue-mc2);
 }
+
 h4 {
   font-size: 14px;
   font-weight: 700;
 }
+
 h5 {
   font-size: 12px;
   font-weight: 700;
 }
+
 h6 {
   font-size: 10px;
   font-weight: 700;
@@ -113,41 +127,53 @@ b,
 strong {
   font-weight: bolder;
 }
+
 small {
   font-size: 80%;
 }
+
 .error {
   border: 1px solid var(--color-blue-mc2);
 }
+
 .errorMessage {
   color: var(--color-blue-mc2);
 }
+
 .eyebrow {
   font-size: 20px;
 }
+
 .-text-primary {
   color: #39b982;
 }
+
 .-text-base {
   color: #000;
 }
+
 .-text-error {
   color: tomato;
 }
+
 .-text-gray {
   color: rgba(0, 0, 0, 0.5);
 }
+
 .rtl.heb-verse {
   direction: ltr;
   unicode-bidi: embed;
 }
+
 .italics {
   font-style: italic;
 }
+
 a.black {
   color: black;
   text-decoration: underline;
 }
+
 button,
 label,
 input,
@@ -159,20 +185,24 @@ select {
   line-height: 1.15;
   margin: 0;
 }
+
 button,
 input {
   overflow: visible;
 }
+
 button,
 select {
   text-transform: none;
 }
+
 button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
   -webkit-appearance: none;
 }
+
 button::-moz-focus-inner,
 [type='button']::-moz-focus-inner,
 [type='reset']::-moz-focus-inner,
@@ -180,12 +210,14 @@ button::-moz-focus-inner,
   border-style: none;
   padding: 0;
 }
+
 button:-moz-focusring,
 [type='button']:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
   outline: 2px solid #39b982;
 }
+
 button {
   margin-bottom: 20px;
   background-color: green;
@@ -195,14 +227,17 @@ button {
   text-align: center;
   padding: 0 40px;
 }
+
 .button.red {
   background-color: var(--color-blue-mc2);
   height: 48px;
 }
+
 .button.grey {
   background-color: grey;
   height: 48px;
 }
+
 div.bible_container,
 div.bible {
   background-color: var(--color-back-mc2ground-mc2);
@@ -215,9 +250,11 @@ div.bible {
   text-align: left;
   color: #333130;
 }
+
 div.bible_container {
   padding-top: 20px;
 }
+
 div.quote-left {
   background-image: url(../images/css/quote-left.png);
   background-position: left center;
@@ -228,6 +265,7 @@ div.quote-left {
   padding: 20px;
   padding-left: 40px;
 }
+
 div.quote-right {
   background-image: url('../images/css/quote-right.png');
   background-position: right center;
@@ -238,6 +276,7 @@ div.quote-right {
   padding: 20px;
   padding-right: 40px;
 }
+
 div.block-quote {
   border-top: 4px solid #de1e25;
   border-bottom: 4px solid #de1e25;
@@ -246,10 +285,11 @@ div.block-quote {
   font-weight: 900;
   padding: 20px;
 }
-div.zoom-image{
+
+div.zoom-image {
   border: 2px;
-  color:var(--color-blue-mc2);
-  padding:3px;
+  color: var(--color-blue-mc2);
+  padding: 3px;
   border-style: solid;
 }
 
@@ -257,21 +297,26 @@ img {
   border-style: none;
   width: 100%;
 }
+
 img.sortable {
   height: 30px;
   width: 30px;
 }
+
 img.image100 {
   width: 50%;
   max-width: 200px;
 }
+
 img.nav-icon {
   width: 100%;
   max-width: 650px;
 }
+
 img.app-img-header {
   width: 100%;
 }
+
 label {
   color: rgba(0, 0, 0, 0.5);
   font-weight: 700;
@@ -288,17 +333,21 @@ textarea {
   box-sizing: border-box;
   padding: 0;
 }
+
 [type='number']::-webkit-inner-spin-button,
 [type='number']::-webkit-outer-spin-button {
   height: auto;
 }
+
 [type='search'] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
+
 [type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
+
 [type='text'],
 [type='number'],
 [type='search'],
@@ -308,27 +357,29 @@ textarea {
   padding: 0 10px;
   font-size: 20px;
 }
+
 [type='text']:focus,
 [type='number']:focus,
 [type='search']:focus,
 [type='password']:focus {
   border-color: #39b982;
 }
+
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
 }
+
 [hidden] {
   display: none;
 }
+
 select {
   width: 100%;
   height: 52px;
   padding: 0 24px 0 10px;
   vertical-align: middle;
-  background: #fff
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E")
-    no-repeat right 12px center;
+  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 12px center;
   background-size: 8px 10px;
   border: solid 1px rgba(0, 0, 0, 0.4);
   border-radius: 0;
@@ -336,32 +387,40 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
 select:focus {
   border-color: #39b982;
   outline: 0;
 }
+
 select:focus::ms-value {
   color: #000;
   background: #fff;
 }
+
 select::ms-expand {
   opacity: 0;
 }
+
 li {
   text-align: left;
 }
+
 ol.rtl {
   list-style-type: arabic-indic;
 }
+
 label,
 .bold {
   font-weight: bold;
 }
+
 p.version {
   text-align: center;
   color: var(--color-version-mc2);
   font-size: 10pt;
 }
+
 p.rtl {
   direction: rtl;
   text-align: right;
@@ -370,16 +429,19 @@ p.rtl {
 .notpublished {
   background-color: yellow;
 }
+
 p.bible {
   padding-bottom: 10px;
   padding-top: 0px;
 }
+
 .gospel_text {
   padding-bottom: 10px;
   padding-left: 40px;
   padding-right: 10px;
   padding-top: 30px;
 }
+
 .gospel-prayer {
   background-image: url('../images/css/quote_open.gif');
   background-position: 10px top;
@@ -390,25 +452,31 @@ p.bible {
   font-weight: bold;
   padding-left: 35px;
 }
+
 .lesson-subheader {
   text-align: left;
   font-weight: 600;
 }
+
 .triangle {
   text-align: left;
 }
+
 .rtl {
   direction: rtl;
   text-align: right;
 }
+
 a {
   background: transparent;
   color: var(--color-blue-mc2);
 }
+
 a:active,
 a:hover {
   outline: 0;
 }
+
 a.bible-readmore {
   background-color: var(--color-blue-mc2);
   border-color: var(--color-blue-mc2);
@@ -431,23 +499,27 @@ sup,
   position: relative;
   vertical-align: baseline;
 }
+
 sup,
-.versenum, .chapternum {
+.versenum,
+.chapternum {
   top: -0.5em;
-  vertical-align:middle;
+  vertical-align: middle;
   color: var(--color-blue-mc2);
 }
 
-.chapternum{
+.chapternum {
   font-size: 100%;
-  padding-right:0pt;
+  padding-right: 0pt;
 }
+
 div.lesson {
   margin-bottom: 30px;
   margin-top: 30px;
   position: relative;
   text-align: left;
 }
+
 div.myfriends-lesson-rtl,
 div.lesson.rtl {
   margin-bottom: 30px;
@@ -455,6 +527,7 @@ div.lesson.rtl {
   position: relative;
   text-align: right;
 }
+
 div.lesson-subtitle,
 div.lesson-section {
   bottom: 0;
@@ -464,6 +537,7 @@ div.lesson-section {
   margin-left: 45px;
   position: absolute;
 }
+
 div.myfriends-lesson-subtitle-rtl,
 div.lesson-subtitle.rtl {
   bottom: 0;
@@ -480,6 +554,7 @@ img.lesson-icon {
   vertical-align: middle;
   width: 30px;
 }
+
 img.myfriend-lesson-rtl-icon,
 img.lesson-icon.rtl {
   height: 30px;
@@ -487,10 +562,12 @@ img.lesson-icon.rtl {
   vertical-align: middle;
   width: 30px;
 }
+
 .myfriends-poetry-top-rtl,
 .myfriends-bible-rtl {
   text-align: right;
 }
+
 img.myfriend-lesson-rtl-icon,
 img.lesson-rtl-icon {
   height: 30px;
@@ -498,19 +575,23 @@ img.lesson-rtl-icon {
   vertical-align: middle;
   width: 30px;
 }
+
 li.ltr {
   color: var(--color-blue-mc2);
 }
+
 p {
   text-align: left;
 }
+
 p.reference {
   padding-top: 20px;
   color: var(--color-blue-mc2);
   font-size: 20px;
   padding-bottom: 20px;
 }
-p.app-store{
+
+p.app-store {
   text-align: center;
 }
 
@@ -520,15 +601,18 @@ div.footer {
   padding-bottom: 75px;
   margin-top: 96px;
 }
+
 a.footer {
   color: #999999;
   text-decoration: none;
 }
+
 p.footer {
   color: #777777;
   letter-spacing: 0.5em;
   text-align: center;
 }
+
 div.float left {
   float: left;
 }
@@ -550,6 +634,7 @@ div.trainer {
   background-position: 8px 2px;
   background-repeat: no-repeat;
 }
+
 div.trainer-hide {
   padding: 0 18px;
   display: none;
@@ -562,17 +647,20 @@ div.trainer-hide {
   background-position: 8px 2px;
   background-repeat: no-repeat;
 }
+
 .reveal.bible {
   color: black;
   background: pink url(../images/css/bible.png);
   background-position: 8px 2px;
   background-repeat: no-repeat;
 }
+
 .reveal.video {
   background: lightgreen url(../images/css/video.png);
   background-position: 8px 2px;
   background-repeat: no-repeat;
 }
+
 .reveal.film.intro {
   background: orange url(../images/css/video.png);
   background-position: 8px 2px;
@@ -589,12 +677,14 @@ div.invisible {
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
 li.nobreak {
   color: purple;
   list-style-type: none;
   margin-left: -40px;
   margin-top: 12px;
 }
+
 li.nobreak-final,
 li.nobreak-final-final {
   color: black;
@@ -602,15 +692,18 @@ li.nobreak-final-final {
   margin-left: -40px;
   margin-top: 12px;
 }
+
 .popup {
   color: green;
   font-style: italic;
 }
+
 .popup-link,
 .internal-link {
   color: var(--color-blue-mc2);
   text-decoration: underline;
 }
+
 .action,
 .external-dbt-movie,
 .external-movie,
@@ -630,27 +723,33 @@ li.nobreak-final-final {
   background-position: 8px 8px;
   background-repeat: no-repeat;
 }
+
 .action {
   background: var(--color-blue-mc2) url(../images/css/action.png);
   background-position: 8px 8px;
   background-repeat: no-repeat;
 }
+
 .external-audio {
   background: var(--color-blue-mc2) url(../images/css/audio.png);
   background-position: 8px 15px;
   background-repeat: no-repeat;
 }
-.collapsible.bible {
+
+.collapsible.bible,
+.bible.collapsible {
   background: var(--color-blue-mc2) url(../images/css/bible.png);
   background-position: 8px 8px;
   background-repeat: no-repeat;
 }
+
 .external-movie,
 .external-dbt-movie {
   background: var(--color-blue-mc2) url(../images/css/video.png);
   background-position: 8px 15px;
   background-repeat: no-repeat;
 }
+
 .revealed {
   color: white;
   margin-top: 20px;
@@ -667,11 +766,13 @@ li.nobreak-final-final {
   background-position: 8px 8px;
   background-repeat: no-repeat;
 }
+
 .revealed.bible {
   background: #777 url(../images/css/white_minus.png);
   background-position: 8px 8px;
   background-repeat: no-repeat;
 }
+
 .revealed.video {
   background: #777 url(../images/css/white_minus.png);
   background-position: 8px 8px;
@@ -693,27 +794,33 @@ li.nobreak-final-final {
   overflow: hidden;
   background-color: #f1f1f1;
 }
+
 .hidden {
   visibility: hidden;
 }
+
 /*for small screen */
 @media only screen and (max-width: 500px) {
   p.footer {
     letter-spacing: 0.1em;
   }
+
   h1 {
     font-size: 24px;
   }
+
   div.lesson-subtitle,
   div.lesson-section {
     font-size: 25px;
     font-weight: 700;
   }
+
   p,
   p.myfriends-gospel-text {
     font-size: 12pt;
   }
 }
+
 /* added by Keith Seabourn */
 #breakout_room {
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
@@ -742,6 +849,7 @@ li.nobreak-final-final {
   background-color: var(--color-blue-mc2);
   color: white;
 }
+
 .alert {
   background-color: yellow;
   margin-top: 20px;

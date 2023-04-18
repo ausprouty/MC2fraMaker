@@ -74,7 +74,7 @@ export async function useRevealMedia() {
             }
         }).catch(error=>{
             if (this.classList.contains('active') ){
-              content.innerHTML = filePath + 'was not found on SD Card'
+              content.innerHTML = id  + " n'a ​​pas été trouvé sur la carte SD"
               content.classList.remove('collapsed')
             }
             else{
