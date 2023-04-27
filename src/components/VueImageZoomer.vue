@@ -286,17 +286,17 @@ export default {
             default: 0
         },
         clickZoom: Boolean,
-        hoverMessage: {
+         hoverMessage: {
             type: String,
-            default: '<span class="vh--icon">&#9906;</span> Hover to Zoom'
+            default: '<span class="vh--icon">&#9906;</span> Passez la souris pour agrandir'
         },
         touchMessage: {
             type: String,
-            default: '<span class="vh--icon">&#9906;</span> Touch to Zoom'
+            default: '<span class="vh--icon">&#9906;</span> Toucher pour agrandir'
         },
         clickMessage: {
             type: String,
-            default: '<span class="vh--icon">&#9906;</span> Click to Zoom'
+            default: '<span class="vh--icon">&#9906;</span> Cliquez pour agrandir'
         },
         closePos: {
             type: String,
